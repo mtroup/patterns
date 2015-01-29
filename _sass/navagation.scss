@@ -1,0 +1,21 @@
+/*****
+CSS contained within this file handles navigation for the menu based off of ritterim.com
+******/
+.no-padding {
+padding: 0 !important;
+}
+.navbar-default > ul.navbar-nav > li > a {
+font-size:18px;
+background:#fff;
+color:#000;
+}
+.navbar-default > ul.navbar-nav > li > a:hover {
+border-bottom: 5px solid #104874;
+color:#000;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+border-bottom: 5px solid #104874;
+background-color:#fff;
+color:#000;
+}
+

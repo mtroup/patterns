@@ -1,0 +1,142 @@
+/* ------ SECTIONS ------
+00. GLOBAL MIXINS & VARIABLS 
+01. BUTTONS 
+02. ALERTS 
+*/
+
+/* ------ 00. GLOBAL MIXINS & VARIABLES ------ */
+
+$border-radius-base: 0;   /*removes all standard border radius from bootstrap*/
+
+/* ------ 01. BUTTONS ------ */
+
+@mixin backgroundHover() {
+    opacity: 0.9;
+}
+
+$white: #ffffff !important;  /* font color for all buttons */
+$btnMenu: #f0ad4e;
+$btnChat: #88af2d;
+$btnHelp: #51616f;
+$btnLogout: #1b1f23;
+$btnSubmit: #428bca;
+$btnSearch: #534d86;
+$btnCancel: #eb4f40;
+$btnDisabled: #cdd2d5;
+$btnEdit: #008287;
+$btnRegister: #de7f40;
+$btnFilter: #40c0be;
+$btnPreview: #50b8a3;
+$btnUpload: #f4d34b;
+$btnAdd: #a9cf5c;
+$btnDelete: #d06a60;
+$btnCreate: #677686;
+$btnPublish: #62d994;
+
+
+.global-btn {
+    @extend .btn;
+    border-radius:0 !important;
+    color: $white;
+     &:hover {
+        color: $white; 
+        @include backgroundHover();
+    } 
+}
+.menu-button {
+    @extend .global-btn;
+    background: $btnMenu;
+}
+.chat-button {
+    @extend .global-btn;
+    background: $btnChat;
+}
+.help-button {
+    @extend .global-btn;
+    background: $btnHelp;
+}
+.logout-button {
+    @extend .global-btn;
+    background: $btnLogout;
+}
+.submit-button {
+    @extend .global-btn;
+    background: $btnSubmit;
+}
+.search-button {
+    @extend .global-btn;
+    background: $btnSearch;
+}
+.cancel-button {
+    @extend .global-btn;
+    background: $btnCancel;
+}
+.disabled-button {
+    @extend .global-btn;
+    background: $btnDisabled;
+}
+.edit-button {
+    @extend .global-btn;
+    background: $btnEdit;
+}
+.register-button {
+    @extend .global-btn;
+    background: $btnRegister;
+}
+.filter-button {
+    @extend .global-btn;
+    background: $btnFilter
+}
+.preview-button {
+    @extend .global-btn;
+    background: $btnPreview;
+
+}
+.upload-button {
+    @extend .global-btn;
+    background: $btnUpload;
+}
+.add-button {
+    @extend .global-btn;
+    background: $btnAdd;
+}
+.delete-button {
+    @extend .global-btn;
+    background: $btnDelete;
+}
+.create-button {
+    @extend .global-btn;
+    background: $btnCreate;
+}
+.publish-button {
+    @extend .global-btn;
+    background: $btnPublish;
+}
+
+/* ------ 02. ALERTS ------ */
+
+$warning-alert: #d06a60;
+.global-alert {
+    @extend .alert;
+    color: $white;
+    padding:15px;
+}
+
+.warning-alert {
+    @extend .global-alert;
+    background: #d06a60;
+}
+.success-alert {
+    background: #66b266;
+    padding:15px;
+    color:#fff;
+}
+.message-alert {
+    background: #ec9e59;
+    padding:15px;
+    color: #fff;
+}
+
+/* ------ 03. PAGINATION ------ */
+
+
