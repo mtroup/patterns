@@ -141,7 +141,7 @@ $warning-alert: #d06a60;
 
 
 
-/************** RESPONSIVE TABLE */
+/**************  04. RESPONSIVE TABLE */
 
 /*BOOTSTRAP TABLE BORDER OVERWRITES*/
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
@@ -154,35 +154,69 @@ border-bottom: 0 !important;
 }
 
 @media screen and (max-width: 991px) {
-.table-striped > tbody > tr:nth-child(odd) > td,
-.table-striped > tbody > tr:nth-child(odd) > th {
-    background-color: #f9f9f9;
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #f9f9f9;
+    }
+
+    table#responsive-table thead {
+        display: none;
+    }
+
+    table#responsive-table tbody td {
+        display: block;
+    }
+
+    table#responsive-table tbody tr td:first-child {
+        color: #000;
+    }
+
+    table#responsive-table tbody td:before {
+        content: attr(data-th);
+        font-weight: bold;
+        display: inline-block;
+        width: 6rem;
+    }
 }
 
-table#responsive-table thead {
-    display: none;
+/* ------ 05. TYPOGRAPHY ------ */
+
+$h1: 36px;
+$h2: 32px;
+$h3: 28px;
+$h4: 24px;
+$h5: 20px;
+$h6: 16px;
+$paragrph: 18px;
+
+@mixin typography() {
+    color:#1f1f1f;
 }
 
-table#responsive-table tbody td {
-    display: block;
+h1 {
+    @include typography();
+    font-size: $h1;
+}
+h2 {
+    @include typography();
+    font-size: $h2;
+}
+h3 {
+    @include typography();
+    font-size: $h3;
+}
+h4 {
+    @include typography();
+    font-size: $h4;
+}
+h5 {
+    @include typography();
+    font-size: $h5;
+}
+h6 {
+    @include typography();
+    font-size: $h6;
 }
 
-table#responsive-table tbody tr td:first-child {
-    color: #000;
-}
 
-table#responsive-table tbody td:before {
-    content: attr(data-th);
-    font-weight: bold;
-    display: inline-block;
-    width: 6rem;
-}
-}
 
-/***** THE GRID ******/
-
-.show-grid {
-    background: #eee;
-    border: solid 1px #fff;
-    padding:10px;
-} 

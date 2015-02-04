@@ -101,30 +101,6 @@ xmp {margin-top:-10px;}
 .main {margin-bottom:80px;}
 .main .row {margin-left:10px;}
 
-h1.h1-styles {
-color: #1f1f1f;
-font-size: 36px;
-}
-h2.h2-styles {
-color: #1f1f1f;
-font-size: 32px;
-}
-h3.h3-styles {
-color: #1f1f1f;
-font-size: 28px;
-}
-h4.h4-styles {
-color: #1f1f1f;
-font-size: 24px;
-}
-h5.h5-styles {
-color: #1f1f1f;
-font-size: 20px;
-}
-h6.h6-styles {
-color: #1f1f1f;
-font-size: 16px;
-}
 p.paragraph {
 color:#000;
 font-size:18px;
@@ -134,3 +110,12 @@ line-height:28px;
 .margin-top {
     margin-top:10px;
 }
+
+
+/***** THE GRID ******/
+
+.show-grid {
+    background: #eee;
+    border: solid 1px #fff;
+    padding:10px;
+} 
