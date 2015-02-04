@@ -141,4 +141,40 @@ $warning-alert: #d06a60;
 
 
 
+/************** RESPONSIVE TABLE */
 
+/*BOOTSTRAP TABLE BORDER OVERWRITES*/
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+border-bottom: solid 1px #c6c6c6;
+border-top: 0;
+}
+
+.table > thead > tr > th {
+border-bottom: 0 !important;
+}
+
+@media screen and (max-width: 991px) {
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #f9f9f9;
+}
+
+table#quote-engine-responsive thead {
+    display: none;
+}
+
+table#quote-engine-responsive tbody td {
+    display: block;
+}
+
+table#quote-engine-responsive tbody tr td:first-child {
+    color: #000;
+}
+
+table#quote-engine-responsive tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    width: 6rem;
+}
+}

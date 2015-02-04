@@ -58,3 +58,46 @@ weight : 6
 </div>
 <h3>Responsive Stacked @ Breakpoint</h3>
 
+<table class="table resultstable quote-engine-responsive" id="quote-engine-responsive">
+    <thead>
+        <tr class="table-header">
+            <th>Table Header 01</th>
+            <th>Table Header 02</th>
+            <th>Table Header 03</th>
+            <th>Table Header 04</th>
+        </tr>
+    </thead>
+        <tbody>
+ <tr>
+                <td data-th="Table Data 01">Table Data 01</td>
+                <td data-th="Table Data 02">Table Data 02</td>
+                <td data-th="Table Data 03">Table Data 03</td>
+                <td data-th="Table Data 04">Table Data 04</td>
+            </tr>
+
+    </tbody>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+    var headertext = [];
+    var headers = document.querySelectorAll("#quote-engine-responsive th"),
+    tablerows = document.querySelectorAll("#quote-engine-responsive th"),
+    tablebody = document.querySelector("#quote-engine-responsive tbody");
+    for (var i = 0; i < headers.length; i++) {
+        var current = headers[i];
+        headertext.push(current.textContent.replace(/\r?\n|\r/, ""));
+    }
+    for (var i = 0, row; row = tablebody.rows[i]; i++) {
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            col.setAttribute("data-th", headertext[j]);
+        }
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $(".quote-engine-responsive tr:even").css("background-color", "#f0f0f0");
+        $('.quote-engine-responsive th').tooltip({ container: 'body' });
+        $('.quote-engine-responsive th').on("click", function () {
+            $(this).tooltip('hide');
+        });
+    });
+</script>    
