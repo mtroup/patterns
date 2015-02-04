@@ -193,46 +193,8 @@ weight : 6
     }
 </script>
 </xmp>
-    <h4>CSS:</h4>
-<xmp class="prettyprint">
-/*BOOTSTRAP TABLE BORDER OVERWRITES*/
-.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
-border-bottom: solid 1px #c6c6c6;
-border-top: 0;
-}
-
-.table > thead > tr > th {
-border-bottom: 0 !important;
-}
-
-@media screen and (max-width: 991px) {
-    .table-striped > tbody > tr:nth-child(odd) > td,
-    .table-striped > tbody > tr:nth-child(odd) > th {
-        background-color: #f9f9f9;
-    }
-
-    table#responsive-table thead {
-        display: none;
-    }
-
-    table#responsive-table tbody td {
-        display: block;
-    }
-
-    table#responsive-table tbody tr td:first-child {
-        color: #000;
-    }
-
-    table#responsive-table tbody td:before {
-        content: attr(data-th);
-        font-weight: bold;
-        display: inline-block;
-        width: 6rem;
-    }
-}
-</xmp>
     <h4>NOTES:</h4>
-    <p>To change table headers so that headers display correctly in a stacked responsive view be sure to alter data-th="Table Data 01". Also make sure you include class="table responsive-table" id="responsive-table" on the table tag.</p><p>The above CSS is included in the base.scss file. No need to included it in your own specific CSS file.</p>
+    <p>To change table headers so that headers display correctly in a stacked responsive view be sure to alter data-th="Table Data 01". Also make sure you include class="table responsive-table" id="responsive-table" on the table tag.</p>
     </div>
 </div>
 <script>
