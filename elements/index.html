@@ -26,8 +26,32 @@ weight : 5
     <button class="delete-button">Delete</button>
     <button class="create-button">Create</button>
     <button class="publish-button">Publish</button>
-
-
+<div class="code-box">
+    <h4>HTML:</h4>
+    <xmp class="prettyprint">
+    <button class="menu-button">Menu</button>
+    </xmp>
+    <h4>SASS SAMPLE</h4>
+    <xmp class="prettyprint">
+    $btnMenu: #f0ad4e;
+        
+    .global-btn {
+    @extend .btn;
+    border-radius:0 !important;
+    color: $white;
+     &:hover {
+        color: $white; 
+        @include backgroundHover();
+    } 
+}
+.menu-button {
+    @extend .global-btn;
+    background: $btnMenu;
+}
+    </xmp>
+    <h4>NOTES:</h4>
+    <p>All buttons are named by the function of the button first followed with "-button". Another example of this would be class="chat-button". There is no need to reference any CSS to achieve styling results.
+</div>
 </div>
 
 <div class="row">
@@ -59,13 +83,30 @@ weight : 5
 <div class="row">
 <h3>Date Picker</h3>
 <input class="form-control" id="datetimepicker"></input>
+<div class="code-box">
+<h4>HTML:</h4>
+<xmp class="prettyprint">
+<input class="form-control" id="datetimepicker"></input>
+</xmp>
+<h4>JAVASCRIPT:</h4>
+<xmp class="prettyprint">
+<script type="text/javascript">
+$(function() {
+    $('#datetimepicker').datetimepicker({
+        autoclose: true
+    });
+});
+</script>
+</xmp>
+<h4>DOCS:</h4>
+<p><a href="http://www.malot.fr/bootstrap-datetimepicker/demo.php">Site Docs</a></p>
+<p><a href="https://github.com/smalot/bootstrap-datetimepicker">Github Project</a></p>
+<h4>NOTES:</h4>
+<p>Place all javascript in footer.</p>
+
 </div>
-<div class="well">
-<strong>Requirements for use:</strong><br />
-<a href="https://github.com/Eonasdan/bootstrap-datetimepicker/wiki/Installation">Install Docs</a><br />
-<a href="http://momentjs.com/">Moment.js</a>
-<p>Please note that the above files required for installation are already included in pattern's file sources.
 </div>
+
 
 <div class="row">
     <h3>Dropdown</h3>

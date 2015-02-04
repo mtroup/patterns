@@ -187,10 +187,11 @@ $h3: 28px;
 $h4: 24px;
 $h5: 20px;
 $h6: 16px;
-$paragrph: 18px;
+$paragraph: 18px;
 
 @mixin typography() {
     color:#1f1f1f;
+    line-height:24px;
 }
 
 h1 {
@@ -216,6 +217,11 @@ h5 {
 h6 {
     @include typography();
     font-size: $h6;
+}
+
+p {
+    @include typography();
+    font-size: $paragraph;
 }
 
 
