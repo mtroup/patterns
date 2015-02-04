@@ -5,33 +5,8 @@ weight : 6
 ---
 
 <h1 class="page-header">Tables</h1>
-
+<div class="row">
 <h3>Basic Non Responsive</h3>
-<table class="table table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Joe</td>
-          <td>Sam</td>
-          <td>Mark</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Smith</td>
-          <td>Smith</td>
-          <td>Smith</td>
-        </tr>
-</table>
-<h3>Horizontal Responsive</h3>
-<div class="table-responsive">
     <table class="table table-striped">
           <thead>
             <tr>
@@ -55,7 +30,96 @@ weight : 6
               <td>Smith</td>
             </tr>
     </table>
+    <div class="code-box">
+        <h4>HTML:</h4>
+<xmp class="prettyprint">
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Joe</td>
+          <td>Sam</td>
+          <td>Mark</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Smith</td>
+          <td>Smith</td>
+          <td>Smith</td>
+        </tr>
+</table>
+</xmp>
+    </div>
 </div>
+<div class="row">
+    <h3>Horizontal Responsive</h3>
+    <div class="table-responsive">
+        <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Joe</td>
+                  <td>Sam</td>
+                  <td>Mark</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Smith</td>
+                  <td>Smith</td>
+                  <td>Smith</td>
+                </tr>
+        </table>
+    </div>
+    <div class="code-box">
+    <h4>HTML:</h4>
+<xmp class="prettyprint">
+<div class="table-responsive">
+    <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Joe</td>
+              <td>Sam</td>
+              <td>Mark</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Smith</td>
+              <td>Smith</td>
+              <td>Smith</td>
+            </tr>
+    </table>
+</div>
+</xmp>
+    <h4>NOTES:</h4>
+    <p>Add's a horizontal scroll bar to the table at breakpoint. For extra styling add "table-striped" to table class for striped rows.</p>
+    </div>
+</div>
+<div class="row">
 <h3>Responsive Stacked @ Breakpoint 991px</h3>
 
 <table class="table responsive-table" id="responsive-table">
@@ -82,7 +146,95 @@ weight : 6
             </tr>
 
     </tbody>
+</table>
+    <div class="code-box">
+        <h4>HTML:</h4>
+<xmp class="prettyprint">
+<table class="table responsive-table" id="responsive-table">
+    <thead>
+        <tr class="table-header">
+        <th>Table Header 01</th>
+        <th>Table Header 02</th>
+        <th>Table Header 03</th>
+        <th>Table Header 04</th>
+        </tr>
+    </thead>
+<tbody>
+    <tr>
+        <td data-th="Table Data 01">Table Data 01</td>
+        <td data-th="Table Data 02">Table Data 02</td>
+        <td data-th="Table Data 03">Table Data 03</td>
+        <td data-th="Table Data 04">Table Data 04</td>
+    </tr>
+     <tr>
+        <td data-th="Table Data 01">Table Data 01</td>
+        <td data-th="Table Data 02">Table Data 02</td>
+        <td data-th="Table Data 03">Table Data 03</td>
+        <td data-th="Table Data 04">Table Data 04</td>
+    </tr>
+    </tbody>
+</table>
+</xmp>
+    <h4>JAVASCRIPT</h4>
+<xmp class="prettyprint">
+<script>
+    var headertext = [];
+    var headers = document.querySelectorAll("#responsive-table th"),
+    tablerows = document.querySelectorAll("#responsive-table th"),
+    tablebody = document.querySelector("#responsive-table tbody");
+    for (var i = 0; i < headers.length; i++) {
+        var current = headers[i];
+        headertext.push(current.textContent.replace(/\r?\n|\r/, ""));
+    }
+    for (var i = 0, row; row = tablebody.rows[i]; i++) {
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            col.setAttribute("data-th", headertext[j]);
+        }
+    }
+</script>
+</xmp>
+    <h4>CSS:</h4>
+<xmp class="prettyprint">
+/*BOOTSTRAP TABLE BORDER OVERWRITES*/
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+border-bottom: solid 1px #c6c6c6;
+border-top: 0;
+}
 
+.table > thead > tr > th {
+border-bottom: 0 !important;
+}
+
+@media screen and (max-width: 991px) {
+    .table-striped > tbody > tr:nth-child(odd) > td,
+    .table-striped > tbody > tr:nth-child(odd) > th {
+        background-color: #f9f9f9;
+    }
+
+    table#responsive-table thead {
+        display: none;
+    }
+
+    table#responsive-table tbody td {
+        display: block;
+    }
+
+    table#responsive-table tbody tr td:first-child {
+        color: #000;
+    }
+
+    table#responsive-table tbody td:before {
+        content: attr(data-th);
+        font-weight: bold;
+        display: inline-block;
+        width: 6rem;
+    }
+}
+</xmp>
+    <h4>NOTES:</h4>
+    <p>To change table headers so that headers display correctly in a stacked responsive view be sure to alter data-th="Table Data 01". Also make sure you include class="table responsive-table" id="responsive-table" on the table tag.</p><p>The above CSS is included in the base.scss file. No need to included it in your own specific CSS file.</p>
+    </div>
+</div>
 <script>
     var headertext = [];
     var headers = document.querySelectorAll("#responsive-table th"),
