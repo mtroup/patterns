@@ -50,21 +50,37 @@ weight : 5
 }
     </xmp>
     <h4>NOTES:</h4>
-    <p>All buttons are named by the function of the button first followed with "-button". Another example of this would be class="chat-button". There is no need to reference any CSS to achieve styling results.
+    <p>All buttons are named by the function of the button first followed with "-button". Another example of this would be class="chat-button". There is no need to reference any CSS for styling results.
 </div>
 </div>
 
 <div class="row">
     <h3>Search Form</h3>
-    <form action="/search" method="get" _lpchecked="1">
+    <form>
         <div class="input-group global-search">
-            <input class="form-control" id="Q" name="Q" placeholder="Search" type="text" value="">
+            <input class="form-control" placeholder="Search" type="text">
             <span class="input-group-btn">
-                <button type="submit" class="search-button" id="user-input-button"><span class="glyphicon glyphicon-search"></span>
+                <button type="submit" class="search-button"><span class="glyphicon glyphicon-search"></span>
             </button>
             </span>
         </div>
     </form>
+<div class="code-box">
+    <h4>HTML:</h4>
+    <xmp class="prettyprint">
+<form>
+    <div class="input-group global-search">
+        <input class="form-control" placeholder="Search" type="text">
+        <span class="input-group-btn">
+            <button type="submit" class="search-button"><span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</form>
+    </xmp>
+    <h4>NOTES:</h4>
+    <p>Reference search button with class="search-button" which in return will use the task button for search and apply the SASS variable's and mixins.</p>
+</div>
 </div>
 <div class="row">
     <h3>Submit Form</h3>
@@ -79,6 +95,24 @@ weight : 5
   </div>
   <button type="submit" class="submit-button">Submit</button>
 </form>
+<div class="code-box">
+    <h4>HTML:</h4>
+    <xmp class="prettyprint">
+<form>
+  <div class="form-group">
+    <label>Sample Label</label>
+    <input type="email" class="form-control" placeholder="Sample">
+  </div>
+  <div class="form-group">
+    <label>Sample Label</label>
+    <input type="email" class="form-control" placeholder="Sample">
+  </div>
+  <button type="submit" class="submit-button">Submit</button>
+</form>    
+    </xmp>
+    <h4>NOTES:</h4>
+    <p>All border radius are removed with SASS - $border-radius-base: 0;</p>
+</div>
 </div>
 <div class="row">
 <h3>Date Picker</h3>
@@ -122,21 +156,30 @@ $(function() {
         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
       </ul>
     </div>
+    <div class="code-box">
+        <h4>HTML:</h4>
+        <xmp class="prettyprint">
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Dropdown
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    </ul>
+</div>            
+        </xmp>
+        <h4>FILES REQUIRED:</h4>
+        <p>bootstrap.js</p>
+        <p>jquery-1.8.3.min</p>
+        <h4>NOTES:</h4>
+        <p>Required files will be included in patterns style package.</p>
+    </div>
 </div>
-<div class="well">
-<p><strong>Requirements</strong></p>
-<p>bootstrap.js</p>
-<p>jquery-1.8.3.min</p>
-<p>
-</div>
-<div class="row">
-    <h3>Select</h3>
-    <select class="form-control">
-        <option>01</option>
-        <option>02</option>
-        <option>03</option>
-    </select>
-</div>
+
 <div class="row">
     <h3>Pagination</h3>
     <nav>
@@ -163,6 +206,30 @@ $(function() {
             </li>
         </ul>
     </nav>
+    <div class="code-box">
+        <h4>HTML:</h4>
+        <xmp class="prettyprint">
+<nav>
+    <ul class="pagination">
+        <li>
+            <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li><a href="#">1</a></li> 
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+            <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+        </xmp>
+    </div>
 </div>
 
 <div class="row">
@@ -170,5 +237,11 @@ $(function() {
     <div class="warning-alert">warning-alert</div>
     <div class="success-alert margin-top">success-alert</div>
     <div class="message-alert margin-top">message-alert</div>
+    <div class="code-box">
+        <h4>HTML:</h4>
+        <xmp class="prettyprint">
+<div class="warning-alert">warning-alert</div>
+        </xmp>
+    </div>
 </div>
 
