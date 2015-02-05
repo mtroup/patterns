@@ -1,5 +1,7 @@
 {% assign pages = site.pages | sort:"weight"  %}
-<ul class="nav sidebar-nav">
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+            <ul class="nav sidebar-nav">
     <div class="logo">Patterns 1.0</div>
   {% for p in pages %}
         {% if p.title != null %}
@@ -11,3 +13,5 @@
     {% endif %}
   {% endfor %}
 </ul>
+</div>
+    </div>
