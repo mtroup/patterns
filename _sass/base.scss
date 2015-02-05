@@ -265,7 +265,7 @@ select.select-responsive {
     }
     
 }
-@media (min-width:768px) {
+@media (max-width:768px) {
     .responsive-logo, .responsive-buttons {
         text-align:center;
     }
